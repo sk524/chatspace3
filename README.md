@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
 
-## usersテーブル
+-## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user|integer|null: false, foreign_key: true|
