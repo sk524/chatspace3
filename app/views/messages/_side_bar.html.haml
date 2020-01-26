@@ -3,15 +3,20 @@
     .side-header__box
       %p.side-header__box__user-name sk
       %ul.side-header__box__menu
+        %li.side-header__box__menu__edit__user
+          = link_to '#' do
+            = icon('fas', 'edit')
         %li.side-header__box__menu__new-group
-          %a{:href => "/groups/new"}
-            %i.fa.fa-cog
+          = link_to '#' do
+            = icon('fas', 'cog')
+        
+                         
   .groups
-    %a{:href => "#"}
+    = link_to '#' do
       .group
         %p.group__group-name test
         %p.group__latest-message まだメッセージがありません
-    %a{:href => "#"}
+    = link_to '#' do
       .group
         %p.group__group-name 太郎
         %p.group__latest-message まだメッセージがありません
