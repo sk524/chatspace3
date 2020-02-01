@@ -1,0 +1,2 @@
+class GroupUserrail < ApplicationRecord
+end
