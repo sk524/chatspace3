@@ -1,4 +1,7 @@
 class MessagesController < ApplicationController
+  defore_action :set_group
+
   def index
-  end
+    @message = Message.new
+    @me
 end
