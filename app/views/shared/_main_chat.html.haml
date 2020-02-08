@@ -5,10 +5,12 @@
         test
       %ul.main-header__left-box__member-list
         Member：
-        %li.main-header__left-box__member-list__member sk
-    = link_to "#", class: "edit__btn" do
-
-      .main-header__edit-btn Edit
+        %li.main-header__left-box__member-list__member
+          test
+    .main-header__edit-btn 
+      = link_to "Edit", edit_group_path(@group.id)
+    -# = link_to "#", class: "edit__btn"
+    
   .messages 
 
   
@@ -21,11 +23,10 @@
   -#   %input.form__submit{type: "submit", value: "Send"}
 
   .form
-    .form__input
-      = form_for [@group, @message] do |f|
+    = form_for [@group, @message] do |f|
+      .form__input
         = f.text_field :content, class: 'form__input__box', placeholder: 'type a message'
-        .form__mask
-          = f.label :image, class: 'form__mask__image' do
-            = icon('fas', 'image', class: 'icon')
-            = f.file_field :image, class: 'form__input__image__input'
-        = f.submit 'Send', class: 'form__submit'
+        = f.label :image, class: 'form__input__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'form__input__image__input'
+      = f.submit 'Send', class: 'form__submit'

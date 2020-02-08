@@ -49,14 +49,20 @@
     overflow: scroll;  
   }
   .form{
-    display: flex;
+    // display: flex;
     height: 90px;
     padding: 20px 40px;
     background-color: #ddd;
+    .new_message{
+      display: flex;
+    }
     &__input{
       position: relative;
-      width: 80%;
-      display: flex;
+      width: 100%;
+      .new_message{
+        display: flex;
+      }
+      
       &__box{
         height: 50px;
         width: 100%;
@@ -85,5 +91,6 @@
       background-color: #38aef0;
       color: white;
       cursor: pointer;
+      
     }
   }
