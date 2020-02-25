@@ -1,3 +1,6 @@
+.messages
+  =render @messages
+
 .chat-main
   .main-header
     .main-header__left-box
@@ -13,9 +16,11 @@
 
   
   .form
-    .form__input
-      %input.form__input__box{placeholder: "type a message", type: "text"}
-      %label.form__input__image
-        %i.fa.fa-image
-        %input.form__input__image-btn{type: "file"}
-    %input.form__submit{type: "submit", value: "Send"}
+    .form_for [@group, @message] do |f|
+      =f.text_field :content, class 'from_message', placeholder: 'type a message'
+      .from__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', 'class', 'icon')
+          =f.file_field :image, class: 'hidden'
+        =f.submit 'Send', class: 'form__submit'
+     
