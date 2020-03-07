@@ -2,6 +2,16 @@ $(function() {
   $("#user-search-field").on("keyup", function() {
     let input = $("#user-search-field").val();
     console.log(input);
+    type: "GET",
+      url: "/users",
+      data { keyword: input },
+      dataType: "json"
+    })
+      .done(function(users) {
+        console.log("成功です");
+      })
+      .fail(function() {
+        console.log("失敗です");
+      });
   });
 });
-console.log(1111)
